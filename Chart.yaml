@@ -3,7 +3,7 @@ description: A OpenLDAP Chart for Kubernetes
 name: icp-openldap
 version: 0.1.5
 keywords: [ldap]
-home: https://www.openldap.ort
+home: https://www.openldap.org
 sources:
   - https://github.com/openldap/openldap
 maintainers:

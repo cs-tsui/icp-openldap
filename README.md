@@ -8,22 +8,25 @@ This update allows the chart can to be used with latest version of OCP/Kubernete
 with updates to the API version of deployments. It also removes the use of `hostPath` and uses emptyDir instead so no host scc's are needed. Tested with Helm 3.
 
 ```
+# Set Variables
 LDAP_PROJECT=cp4i-ldap
-oc new-project $LDAP_PROJECT
+RELEASE=cs-ldap
 
+# New project and add SCC
+oc new-project $LDAP_PROJECT
 oc adm policy add-scc-to-user anyuid -z default -n $LDAP_PROJECT
 
 # Install Helm Chart
-helm install icp-ldap .
+helm install $RELEASE .
 
 # Check if pods are up, and if so, port-forward to test the LDAP connection
-oc port-forward svc/icp-ldap 1389:389
+oc port-forward svc/$RELEASE 1389:389
 
 # Test LDAP
 ldapsearch -x -H ldap://localhost:1389 -b 'dc=local,dc=io' -D "cn=admin,dc=local,dc=io" -w admin
 
 # Test Admin UI
-oc port-forward svc/icp-ldap-admin 1880:80
+oc port-forward svc/$RELEASE-admin 1880:80
 
 # Login to localhost:1880 from your browser, and login with default creds (unless modified)
 # username: cn=admin,dc=local,dc=io

@@ -5,7 +5,7 @@ Installs OpenLDAP and phpLDAPadmin with a small number of initial users for the 
 ## Updated Installation 
 
 This update allows the chart can to be used with latest version of OCP/Kubernetes
-with updates to the API version of deployments. It also removes the use of `hostPath` and uses emptyDir instead so no host scc's are needed. Tested with Helm 3.
+with updates to the API version of deployments. It also removes the use of `hostPath` and uses emptyDir instead so no host scc's are needed. Tested with Helm 3. Refer to `Setup IBM Common Services LDAP integration` section to add LDAP to common services.
 
 ```
 # Set Variables
@@ -108,7 +108,7 @@ PhpLdapAdmin:
   Memory: "200Mi"
 ```
 
-## Setup IBM Cloud Private LDAP integration
+## Setup IBM Common Services LDAP integration
 
 Detailed information about LDAP support in ICP avilable on the [IBM KnowledgeCenter](https://www.ibm.com/support/knowledgecenter/SSBS6K_2.1.0/user_management/configure_ldap.html)
 

@@ -33,6 +33,8 @@ oc port-forward svc/$RELEASE-admin 1880:80
 # password: admin
 ```
 
+To Add to Common Service, the LDAP server URL is `ldap://cs-ldap.cp4i-ldap.svc:389`. 
+
 ## Installation (Previous Instructions)
 To install the chart, you'll need the [helm cli](https://www.ibm.com/support/knowledgecenter/SSBS6K_2.1.0/app_center/create_helm_cli.html?view=kc) and the [IBM Cloud Private CLI](https://www.ibm.com/support/knowledgecenter/SSBS6K_2.1.0/manage_cluster/install_cli.html?view=kc). Note: the IBM Cloud Private CLI version level must match the version level that is downloadable via your ICP console, under ***Menu > Command Line Tools > Cloud Private CLI***.
 
